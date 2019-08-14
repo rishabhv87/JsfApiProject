@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15042767343350" configfile="/DNBTeam_K/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Welcome Page" x="122" y="178" id="pf15042767545581" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15042767545592" path="/UserLogin.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Account Overview" x="338" y="178" id="pf15042767545593" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15042767545594 pf15043524238000 pf15044398820081 pf150444679744614 pf15044725489180 pf15045174436500 pf15047930705560" inlinks="pf15042767545592 pf15048155945518 pf15048157295209 pf150481597105010 pf150481636454211" path="/WelcomeUser.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Account Details" x="554" y="178" id="pf15042767545595" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15043524238001 pf15048155945518" inlinks="pf15042767545594" path="/AccountOverview.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="AccountDetails" x="770" y="178" id="pf15043524238162" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" inlinks="pf15043524238001" path="/AccountDetails.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="CustomerDetails" id="pf15043524238163" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15043524238000" path="/CustomerDetails.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Branch Details" id="pf15044398820082" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf15044421893263" inlinks="pf15044398820081" path="/BankOverview.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="BranchDetails" id="pf15044421893264" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" inlinks="pf15044421893263" path="/BranchDetails.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Currency Exchange" id="pf150444674475611" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf150444814292715" inlinks="pf150444679744614" path="/CurrencyOverview.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="CurrencyXchange" id="pf150444814292716" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" inlinks="pf150444814292715" path="/CurrencyXchange.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Payment W/O Kid Confirmation" id="pf15044725489181" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf15044760635542 pf150481636454211" inlinks="pf15044725489180" path="/PaymentWithoutKid.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Payment Overview search" id="pf15044760635543" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15048057624190 pf15048157295209" inlinks="pf15044760635542" path="/PaymentWithoutKidConfirmation.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Payment Search Successful" id="pf15045174436701" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf15045175386613" inlinks="pf15045174436500" path="/PaymentIdSearchPage.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="PaymentIdSearchResult" id="pf15045175386614" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf15045175386613" path="/PaymentIdSearchResult.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Welcome Page" id="pf15047930705571" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf150481597105010" inlinks="pf15047930705560 pf15048057624190" path="/PaymentOverview.jsp"/>
+  <links id="pf15042767545592" target="pf15042767545593" source="pf15042767545581" outcome="customerSuccess"/>
+  <links id="pf15042767545594" target="pf15042767545595" source="pf15042767545593" outcome="accountSuccess"/>
+  <links id="pf15043524238001" target="pf15043524238162" source="pf15042767545595" outcome="success"/>
+  <links id="pf15043524238000" target="pf15043524238163" source="pf15042767545593" outcome="customerSuccess"/>
+  <links id="pf15044398820081" target="pf15044398820082" source="pf15042767545593" outcome="bankSuccess"/>
+  <links id="pf15044421893263" target="pf15044421893264" source="pf15044398820082" outcome="branchSuccess"/>
+  <links id="pf150444679744614" target="pf150444674475611" source="pf15042767545593" outcome="CurrencyOverviewSuccess"/>
+  <links id="pf150444814292715" target="pf150444814292716" source="pf150444674475611" outcome="sucessExchangeRates"/>
+  <links id="pf15044725489180" target="pf15044725489181" source="pf15042767545593" outcome="successPaymentWithoutKid"/>
+  <links id="pf15044760635542" target="pf15044760635543" source="pf15044725489181" outcome="paymentwithoutKIDSuccess"/>
+  <links id="pf15045174436500" target="pf15045174436701" source="pf15042767545593" outcome="successPaymentSearch"/>
+  <links id="pf15045175386613" target="pf15045175386614" source="pf15045174436701" outcome="paymentSearchConfirmed"/>
+  <links id="pf15047930705560" target="pf15047930705571" source="pf15042767545593" outcome="allAccTxnDetailFetched"/>
+  <links id="pf15048057624190" target="pf15047930705571" source="pf15044760635543" outcome="allAccTxnDetailFetched"/>
+  <links id="pf15048155945518" target="pf15042767545593" source="pf15042767545595" outcome="goToHome"/>
+  <links id="pf15048157295209" target="pf15042767545593" source="pf15044760635543" outcome="goToHome"/>
+  <links id="pf150481597105010" target="pf15042767545593" source="pf15047930705571" outcome="goToHome"/>
+  <links id="pf150481636454211" target="pf15042767545593" source="pf15044725489181" outcome="goToHome"/>
+</pageflow:Pageflow>

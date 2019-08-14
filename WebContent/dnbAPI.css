@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+#header{
+	background-color: #999999;
+	color: white;
+	text-align: center;
+	
+} 
+
+#footer{
+	background-color: #999999;
+	color: white;
+	text-align: right;
+}
+
+#loggedUser{
+	background-color: #999991;
+	color: white;
+	text-align: right;
+}
+
